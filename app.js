@@ -1,9 +1,3 @@
-(cursorBlink = () => {
-  setInterval (() => {
-    document.querySelector('.cursor').classList.toggle('hidden');
-  }, 500);
-})();
-
 setTimeout(typeMessage = () => {
   const messageEl = document.querySelector('.message');
   const messageString = '503 - be right back';
