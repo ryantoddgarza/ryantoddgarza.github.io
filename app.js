@@ -1,66 +1,21 @@
-(function cursorBlink() {
-  setInterval (function() {
+(cursorBlink = () => {
+  setInterval (() => {
     document.querySelector('.cursor').classList.toggle('hidden');
   }, 500);
 })();
 
-setTimeout(function typeMessage() {
-  let domMessage = document.querySelector('.message');
-  let messageString = 'be right back';
-  let messageContent = messageString.split('');
-  let messageOutput = [];
+setTimeout(typeMessage = () => {
+  const messageEl = document.querySelector('.message');
+  const messageString = '503 - be right back';
 
-  for (let i = 0; i < messageContent.length; i++) {
-    task(i);
-    function task(i) {
-      setTimeout (function() {
-        messageOutput.push(messageContent[i]);
-        domMessage.textContent = messageOutput.join('');
-      }, 200 * i);
-    }
-  }
-
-  document.addEventListener('keydown', function(event) {
-    let key = event.key;
-
-    switch (key) {
-      case 'Backspace':
-        messageOutput.pop();
-        break;
-
-      case 'Shift':
-      case 'Meta':
-      case 'Alt':
-      case 'Control':
-      case 'Escape':
-      case 'Tab':
-      case 'CapsLock':
-      case 'Enter':
-        // Ignore modifier keys
-        break;
-
-      default:
-          messageOutput.push(key);
-        break;
-    }
-    domMessage.textContent = messageOutput.join('');
-  })
-
+  [...messageString].map((char, i) => {
+    setTimeout(() => {
+      messageEl.innerHTML += char;
+    }, i * 180);
+  });
 }, 1250);
 
-setTimeout(function showSocial() {
+setTimeout(showSocial = () => {
   document.querySelector('.social-icon-row').style.opacity = '1';
 }, 4000);
 
-setTimeout(function showKeyboard() {
-  const icon = document.querySelector('.keyboard-container');
-  icon.style.opacity = '1';
-}, 8000);
-
-function hideKeyboardIcon() {
-  document.querySelector('.keyboard-container').classList.add('keyboard-open');
-}
-
-document.querySelector('.keyboard-container').addEventListener('click', function() {
-  hideKeyboardIcon();
-})
