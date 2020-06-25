@@ -14,13 +14,7 @@
 body {
   font-family: 'Helvetica Nue', Helvetica, Arial, sans-serif;
   text-align: center;
-}
-
-footer {
-  position: absolute;
-  bottom: 20%;
-  left: 0;
-  right: 0;
+  background: #ffffff;
 }
 
 a {
@@ -104,19 +98,37 @@ select {
   fill: #b3b3b3;
 }
 
-.social {
+.footer {
+  position: absolute;
+  bottom: 16.6666%;
+  left: 0;
+  right: 0;
+}
+
+.social-icon-row {
+  display: flex;
+  justify-content: center;
   opacity: 0;
   transition: all 2s;
 }
 
-.social-icon {
-  margin: 5px;
+.social-icon-row > *:not(:last-child) {
+  margin-right: 8px;
+}
+
+.social-icon-wrapper {
+  width: fit-content;
+  padding: 10px;
+}
+
+.social-icon-wrapper > svg {
+  display: block;
   fill: #b3b3b3;
   transition: all 0.6s;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .social-icon:hover {
+  .social-icon-wrapper:hover > svg {
     fill: #000;
   }
 }

@@ -49,7 +49,7 @@ setTimeout(function typeMessage() {
 }, 1250);
 
 setTimeout(function showSocial() {
-  document.querySelector('.social').style.opacity = '1';
+  document.querySelector('.social-icon-row').style.opacity = '1';
 }, 4000);
 
 setTimeout(function showKeyboard() {
