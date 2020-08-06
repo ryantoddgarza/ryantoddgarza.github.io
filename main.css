@@ -18,6 +18,13 @@
   box-sizing: inherit;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 .cursor {
   width: 10px;
   height: 22px;
@@ -68,7 +75,7 @@
   width: 28px;
   height: 28px;
   fill: #c9c9c9;
-  transition: all 0.6s ease-in-out;
+  transition: fill 0.6s ease-in-out;
 }
 
 @media (hover: hover) and (pointer: fine) {

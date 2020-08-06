@@ -26,4 +26,7 @@ async function init() {
   animate.showSocial();
 }
 
-window.onload = init;
+window.onload = function() {
+  init();
+  document.body.classList.remove('preload');
+};
